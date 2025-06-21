@@ -1,0 +1,84 @@
+{
+  "_UserLayout-CEYafTiA.js": {
+    "file": "assets/UserLayout-CEYafTiA.js",
+    "name": "UserLayout",
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-P29661G6.js"
+    ]
+  },
+  "_index-P29661G6.js": {
+    "file": "assets/index-P29661G6.js",
+    "name": "index",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Auth/ForgotPassword.jsx": {
+    "file": "assets/ForgotPassword-eIM-FLZC.js",
+    "name": "ForgotPassword",
+    "src": "resources/js/Pages/Auth/ForgotPassword.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Dashboard.jsx": {
+    "file": "assets/Dashboard-DdtvRW6y.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-P29661G6.js",
+      "_UserLayout-CEYafTiA.js"
+    ]
+  },
+  "resources/js/Pages/Profile.jsx": {
+    "file": "assets/Profile-BVMbtFyq.js",
+    "name": "Profile",
+    "src": "resources/js/Pages/Profile.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-P29661G6.js",
+      "_UserLayout-CEYafTiA.js"
+    ]
+  },
+  "resources/js/Pages/Register.jsx": {
+    "file": "assets/Register-hJp1_8T5.js",
+    "name": "Register",
+    "src": "resources/js/Pages/Register.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-P29661G6.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.jsx": {
+    "file": "assets/Welcome-C9SMcfxI.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-P29661G6.js"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DTGrxYXR.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Auth/ForgotPassword.jsx",
+      "resources/js/Pages/Dashboard.jsx",
+      "resources/js/Pages/Profile.jsx",
+      "resources/js/Pages/Register.jsx",
+      "resources/js/Pages/Welcome.jsx"
+    ],
+    "css": [
+      "assets/app-Bg9_uLIt.css"
+    ]
+  }
+}
