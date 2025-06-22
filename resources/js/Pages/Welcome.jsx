@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from '@inertiajs/react';
-import { Inertia } from '@inertiajs/inertia';
-
+import React from 'react';
+import { Link, useForm } from '@inertiajs/react';
 
 export default function Welcome() {
-  const [form, setForm] = useState({ email: '', password: '' });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const { data, setData, post, processing, errors } = useForm({
+    email: '',
+    password: '',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Inertia.post('/login', form);
+    post('/login');
   };
 
   return (
@@ -26,30 +23,47 @@ export default function Welcome() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-[#e0e0e0] shadow-inner-neumorphic text-gray-700 focus:outline-none"
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-[#e0e0e0] shadow-inner-neumorphic text-gray-700 focus:outline-none"
-            required
-          />
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={data.email}
+              onChange={e => setData('email', e.target.value)}
+              className="w-full px-4 py-3 rounded-xl bg-[#e0e0e0] shadow-inner-neumorphic text-gray-700 focus:outline-none"
+              required
+            />
+            {errors.email && (
+              <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={data.password}
+              onChange={e => setData('password', e.target.value)}
+              className="w-full px-4 py-3 rounded-xl bg-[#e0e0e0] shadow-inner-neumorphic text-gray-700 focus:outline-none"
+              required
+            />
+            {errors.password && (
+              <p className="text-red-600 text-sm mt-1">{errors.password}</p>
+            )}
+          </div>
+
+          {/* Show authentication error */}
+          {errors.message && (
+            <p className="text-red-600 text-sm mt-2 text-center">{errors.message}</p>
+          )}
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-cyan-500 shadow-neumorphic-inset hover:scale-105 transition-transform"
+            disabled={processing}
+            className="w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-cyan-500 shadow-neumorphic-inset hover:scale-105 transition-transform disabled:opacity-50"
           >
-            Login
+            {processing ? 'Logging in...' : 'Login'}
           </button>
 
           <div className="text-right text-sm mt-1">

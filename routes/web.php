@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', fn () => Inertia::render('Welcome'))->name('welcome');
 
 Route::middleware('guest')->group(function () {
+    Route::get('/login', fn () => Inertia::render('Welcome'))->name('login'); // ✅ Added this
     Route::get('/register', [RegisteredUserController::class, 'create']);
     Route::post('/register', [RegisteredUserController::class, 'store']);
     Route::post('/login', [AuthenticatedSessionController::class, 'store']);
