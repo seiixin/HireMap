@@ -8,5 +8,5 @@ export default defineConfig({
       refresh: true,
     }),
   ],
-  base: '/build/', // <- Use relative path for production
+  base: '/build/', 
 });
