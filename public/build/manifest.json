@@ -1,14 +1,14 @@
 {
-  "_UserLayout-ChBHkO_K.js": {
-    "file": "assets/UserLayout-ChBHkO_K.js",
+  "_UserLayout-DVyAxowd.js": {
+    "file": "assets/UserLayout-DVyAxowd.js",
     "name": "UserLayout",
     "imports": [
       "resources/js/app.jsx",
-      "_index-B3gxAEcO.js"
+      "_index-BQntSSOa.js"
     ]
   },
-  "_index-B3gxAEcO.js": {
-    "file": "assets/index-B3gxAEcO.js",
+  "_index-BQntSSOa.js": {
+    "file": "assets/index-BQntSSOa.js",
     "name": "index",
     "imports": [
       "resources/js/app.jsx"
@@ -20,7 +20,7 @@
     "isEntry": true
   },
   "resources/js/Pages/Auth/ForgotPassword.jsx": {
-    "file": "assets/ForgotPassword-BWdVt3Qr.js",
+    "file": "assets/ForgotPassword-Dnq4xJKC.js",
     "name": "ForgotPassword",
     "src": "resources/js/Pages/Auth/ForgotPassword.jsx",
     "isDynamicEntry": true,
@@ -29,49 +29,49 @@
     ]
   },
   "resources/js/Pages/Dashboard.jsx": {
-    "file": "assets/Dashboard-CTiU-U9-.js",
+    "file": "assets/Dashboard-CaEP8jez.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Dashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-B3gxAEcO.js",
-      "_UserLayout-ChBHkO_K.js"
+      "_index-BQntSSOa.js",
+      "_UserLayout-DVyAxowd.js"
     ]
   },
   "resources/js/Pages/Profile.jsx": {
-    "file": "assets/Profile-B5_pnsmY.js",
+    "file": "assets/Profile-DlzrBsey.js",
     "name": "Profile",
     "src": "resources/js/Pages/Profile.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-B3gxAEcO.js",
-      "_UserLayout-ChBHkO_K.js"
+      "_index-BQntSSOa.js",
+      "_UserLayout-DVyAxowd.js"
     ]
   },
   "resources/js/Pages/Register.jsx": {
-    "file": "assets/Register-tHwigCi7.js",
+    "file": "assets/Register-KEL_iYSp.js",
     "name": "Register",
     "src": "resources/js/Pages/Register.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-B3gxAEcO.js"
+      "_index-BQntSSOa.js"
     ]
   },
   "resources/js/Pages/Welcome.jsx": {
-    "file": "assets/Welcome-Ds2Lcwum.js",
+    "file": "assets/Welcome-twihUBwM.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-B3gxAEcO.js"
+      "_index-BQntSSOa.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-C-BDKEfE.js",
+    "file": "assets/app-C7aOwaMl.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
