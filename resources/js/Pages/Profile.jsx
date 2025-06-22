@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { usePage } from '@inertiajs/react';
 import { Inertia } from '@inertiajs/inertia';
 import UserLayout from '@/Layouts/UserLayout';
+import { Eye, EyeOff } from 'lucide-react'; 
 
 const Profile = () => {
   const { auth, errors, flash } = usePage().props;
@@ -14,6 +15,9 @@ const Profile = () => {
     password: '',
     password_confirmation: ''
   });
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -66,27 +70,46 @@ const Profile = () => {
             />
             {errors?.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
           </div>
-          <div>
+
+          {/* New Password */}
+          <div className="relative">
             <label className="block mb-1 font-semibold">New Password</label>
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               value={form.password}
               onChange={handleChange}
-              className="w-full border p-3 rounded-md"
+              className="w-full border p-3 pr-12 rounded-md"
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-[38px] text-gray-500 hover:text-gray-700"
+            >
+              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            </button>
             {errors?.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
           </div>
-          <div>
+
+          {/* Confirm Password */}
+          <div className="relative">
             <label className="block mb-1 font-semibold">Confirm Password</label>
             <input
-              type="password"
+              type={showPasswordConfirm ? 'text' : 'password'}
               name="password_confirmation"
               value={form.password_confirmation}
               onChange={handleChange}
-              className="w-full border p-3 rounded-md"
+              className="w-full border p-3 pr-12 rounded-md"
             />
+            <button
+              type="button"
+              onClick={() => setShowPasswordConfirm(!showPasswordConfirm)}
+              className="absolute right-3 top-[38px] text-gray-500 hover:text-gray-700"
+            >
+              {showPasswordConfirm ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            </button>
           </div>
+
           <div className="flex gap-2">
             <button
               type="submit"

@@ -62,46 +62,46 @@ const UpdateApplication = ({ data: initialData, onClose }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50 p-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow max-w-xl w-full relative"
+        className="bg-white p-6 sm:p-8 rounded-2xl shadow max-w-xl w-full relative max-h-[90vh] overflow-y-auto"
       >
         {/* Close button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl sm:text-3xl font-bold touch-manipulation w-8 h-8 flex items-center justify-center"
           aria-label="Close"
         >
           &times;
         </button>
 
-        <h2 className="text-2xl font-semibold text-center mb-6 text-blue-700">
+        <h2 className="text-xl sm:text-2xl font-semibold text-center mb-6 text-blue-700 pr-8">
           Update Application
         </h2>
 
         {/* Success Message */}
         {successMessage && (
-          <div className="mb-4 p-4 bg-green-100 text-green-800 rounded-lg text-center font-semibold">
+          <div className="mb-4 p-3 sm:p-4 bg-green-100 text-green-800 rounded-lg text-center font-semibold text-sm sm:text-base">
             {successMessage}
           </div>
         )}
 
         {/* Form-wide error */}
         {errors.form && (
-          <div className="mb-4 p-4 bg-red-100 text-red-800 rounded-lg text-center font-semibold">
+          <div className="mb-4 p-3 sm:p-4 bg-red-100 text-red-800 rounded-lg text-center font-semibold text-sm sm:text-base">
             {errors.form}
           </div>
         )}
 
         <div className="mb-4">
-          <label className="block text-blue-600 text-sm mb-2">Job Title:</label>
+          <label className="block text-blue-600 text-sm sm:text-base mb-2">Job Title:</label>
           <input
             type="text"
             value={data.job_title}
             onChange={(e) => updateField("job_title", e.target.value)}
             placeholder="Enter job title"
-            className={`w-full p-3 rounded-xl bg-blue-50 border ${
+            className={`w-full p-3 sm:p-4 rounded-xl bg-blue-50 border ${
               errors.job_title ? "border-red-500" : "border-transparent"
-            } focus:outline-none focus:ring-2 focus:ring-blue-400`}
+            } focus:outline-none focus:ring-2 focus:ring-blue-400 text-base`}
           />
           {errors.job_title && (
             <p className="text-red-600 text-sm mt-1">{errors.job_title}</p>
@@ -109,13 +109,13 @@ const UpdateApplication = ({ data: initialData, onClose }) => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-blue-600 text-sm mb-2">Status:</label>
+          <label className="block text-blue-600 text-sm sm:text-base mb-2">Status:</label>
           <select
             value={data.status}
             onChange={(e) => updateField("status", e.target.value)}
-            className={`w-full p-3 rounded-xl bg-blue-50 border ${
+            className={`w-full p-3 sm:p-4 rounded-xl bg-blue-50 border ${
               errors.status ? "border-red-500" : "border-transparent"
-            } focus:outline-none focus:ring-2 focus:ring-blue-400`}
+            } focus:outline-none focus:ring-2 focus:ring-blue-400 text-base`}
           >
             <option value="" disabled>
               Select status
@@ -133,31 +133,31 @@ const UpdateApplication = ({ data: initialData, onClose }) => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-blue-600 text-sm mb-2">Notes:</label>
+          <label className="block text-blue-600 text-sm sm:text-base mb-2">Notes:</label>
           <textarea
             value={data.notes}
             onChange={(e) => updateField("notes", e.target.value)}
             placeholder="Optional notes"
             rows={3}
-            className="w-full p-3 rounded-xl bg-blue-50 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 sm:p-4 rounded-xl bg-blue-50 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 text-base resize-none"
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-blue-600 text-sm mb-2">Link:</label>
+        <div className="mb-6">
+          <label className="block text-blue-600 text-sm sm:text-base mb-2">Link:</label>
           <input
             type="url"
             value={data.link}
             onChange={(e) => updateField("link", e.target.value)}
             placeholder="Optional link"
-            className="w-full p-3 rounded-xl bg-blue-50 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 sm:p-4 rounded-xl bg-blue-50 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
           />
         </div>
 
         <button
           type="submit"
           disabled={processing}
-          className="w-full py-3 rounded-xl bg-blue-300 text-blue-900 font-semibold shadow hover:shadow-inner hover:text-blue-700 transition duration-200"
+          className="w-full py-3 sm:py-4 rounded-xl bg-blue-300 text-blue-900 font-semibold shadow hover:shadow-inner hover:text-blue-700 active:scale-95 transition duration-200 touch-manipulation text-base"
         >
           {processing ? "Updating..." : "Update Application"}
         </button>

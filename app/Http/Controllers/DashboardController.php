@@ -19,9 +19,9 @@ class DashboardController extends Controller
         $stats = [
             'applied' => $applications->where('status', 'applied')->count(),
             'replied' => $applications->where('status', 'replied')->count(),
-            'interviews' => $applications->where('status', 'interview')->count(),
+            'interview' => $applications->where('status', 'interview')->count(),
             'final' => $applications->where('status', 'final')->count(),
-            'offers' => $applications->where('status', 'offer')->count(),
+            'offer' => $applications->where('status', 'offer')->count(),          
         ];
 
         return Inertia::render('Dashboard', [
