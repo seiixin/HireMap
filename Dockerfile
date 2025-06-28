@@ -45,10 +45,6 @@ COPY --from=node-builder /app/public/build ./public/build
 # Install PHP dependencies without dev packages
 RUN composer install --no-dev --optimize-autoloader
 
-# Clear and cache config/views
-RUN php artisan config:clear \
- && php artisan cache:clear \
- && php artisan view:clear
 
 # Set permissions
 RUN chown -R www-data:www-data storage bootstrap/cache
@@ -57,4 +53,7 @@ RUN chown -R www-data:www-data storage bootstrap/cache
 EXPOSE 9000
 
 # Start php-fpm server
-CMD ["php-fpm"]
+CMD php artisan config:clear \
+ && php artisan cache:clear \
+ && php artisan view:clear \
+ && php-fpm
