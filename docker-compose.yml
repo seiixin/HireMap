@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hiremap_app
+    volumes:
+      - .:/var/www
+    environment:
+      APP_ENV: production
+      APP_KEY: base64:ddwEdDVLaamlMuqF8XjAldCIzuXhMBjXP7TcGwwdFhM=
+      APP_URL: https://hiremap-production.up.railway.app
+      ASSET_URL: https://hiremap-production.up.railway.app
+      FORCE_HTTPS: true
+      DB_CONNECTION: mysql
+      DB_HOST: trolley.proxy.rlwy.net
+      DB_PORT: 12845
+      DB_DATABASE: railway
+      DB_USERNAME: root
+      DB_PASSWORD: IUViFgSVdbuXauUphMqpXUeOgVfnZYsq
+      SESSION_DRIVER: database
+      SESSION_LIFETIME: 120
+      CACHE_STORE: database
+      QUEUE_CONNECTION: database
+      MAIL_MAILER: smtp
+      MAIL_HOST: sandbox.smtp.mailtrap.io
+      MAIL_PORT: 2525
+      MAIL_USERNAME: 78d24c03d4bbec
+      MAIL_PASSWORD: 0196e1b11f4e5b
+      MAIL_ENCRYPTION: null
+      MAIL_FROM_ADDRESS: sidneypagdanganan@gmail.com
+      MAIL_FROM_NAME: HireMap
+      VITE_APP_NAME: HireMap
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: hiremap_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
